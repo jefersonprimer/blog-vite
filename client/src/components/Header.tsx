@@ -15,6 +15,11 @@ export default function Header() {
         
         {/* Navigation */}
         <nav className="flex items-center space-x-4">
+          <Link href="/how-to-create">
+            <div className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer mr-4">
+              Create Post
+            </div>
+          </Link>
           <LanguageSelector />
           <ThemeToggle />
         </nav>

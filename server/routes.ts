@@ -56,6 +56,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Serve the how-to-create-posts guide
+  app.get("/how-to-create-posts.md", async (req, res) => {
+    try {
+      const filePath = path.resolve(process.cwd(), "how-to-create-posts.md");
+      const content = await fs.readFile(filePath, "utf-8");
+      res.type("text/markdown").send(content);
+    } catch (error) {
+      console.error("Error fetching guide:", error);
+      res.status(500).json({ message: "Error fetching how-to guide" });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

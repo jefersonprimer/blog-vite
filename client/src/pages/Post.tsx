@@ -42,9 +42,9 @@ export default function PostPage() {
               : "Ops! A página que você está procurando não existe."}
           </p>
           <Link href="/">
-            <a className="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors cursor-pointer">
               {language === "en" ? "Back to Home" : "Voltar para Início"}
-            </a>
+            </div>
           </Link>
         </div>
       </div>
@@ -57,10 +57,10 @@ export default function PostPage() {
         {/* Post Navigation */}
         <div className="mb-6">
           <Link href="/">
-            <a className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline">
+            <div className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">
               <i className="ri-arrow-left-line mr-1"></i>
               {language === "en" ? "Back to all posts" : "Voltar para todos os posts"}
-            </a>
+            </div>
           </Link>
         </div>
         
@@ -83,9 +83,9 @@ export default function PostPage() {
                 : "O post que você está procurando não existe."}
             </p>
             <Link href="/">
-              <a className="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+              <div className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors cursor-pointer">
                 {language === "en" ? "Back to Home" : "Voltar para Início"}
-              </a>
+              </div>
             </Link>
           </div>
         )}

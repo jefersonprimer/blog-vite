@@ -26,7 +26,7 @@ export default function PostCard({ post }: PostCardProps) {
               day: 'numeric' 
             })}</span>
           </div>
-          <div className="text-sm text-primary-600 dark:text-primary-400 font-medium">
+          <div className="text-sm text-blue-600 dark:text-blue-400 font-medium">
             {language.toUpperCase()}
           </div>
         </div>
@@ -42,10 +42,10 @@ export default function PostCard({ post }: PostCardProps) {
           ))}
         </div>
         <Link href={`/posts/${post.id}`}>
-          <a className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline">
+          <div className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">
             {language === 'en' ? 'Read more' : 'Leia mais'}
             <i className="ri-arrow-right-line ml-1"></i>
-          </a>
+          </div>
         </Link>
       </div>
     </article>

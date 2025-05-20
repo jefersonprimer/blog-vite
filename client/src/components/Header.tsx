@@ -8,9 +8,9 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
-          <a className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 cursor-pointer">
             <span className="text-xl font-bold">📝 PrimerDev</span>
-          </a>
+          </div>
         </Link>
         
         {/* Navigation */}

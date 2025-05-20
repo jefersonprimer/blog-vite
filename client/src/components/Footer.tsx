@@ -5,19 +5,19 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-600 dark:text-gray-400">
-              Built with ❤️ by <a href="https://github.com/jefersonprimer" className="text-primary-600 dark:text-primary-400 hover:underline">@jefersonprimer</a>
+              Built with ❤️ by <a href="https://github.com/jefersonprimer" className="text-blue-600 dark:text-blue-400 hover:underline">@jefersonprimer</a>
             </p>
           </div>
           <div className="flex space-x-6">
-            <a href="https://github.com/jefersonprimer" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+            <a href="https://github.com/jefersonprimer" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
               <i className="ri-github-fill text-xl"></i>
               <span className="sr-only">GitHub</span>
             </a>
-            <a href="https://twitter.com/jefersonprimer" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+            <a href="https://twitter.com/jefersonprimer" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
               <i className="ri-twitter-fill text-xl"></i>
               <span className="sr-only">Twitter</span>
             </a>
-            <a href="https://linkedin.com/in/jefersonprimer" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+            <a href="https://linkedin.com/in/jefersonprimer" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
               <i className="ri-linkedin-fill text-xl"></i>
               <span className="sr-only">LinkedIn</span>
             </a>

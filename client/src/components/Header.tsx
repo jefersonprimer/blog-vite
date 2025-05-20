@@ -5,6 +5,7 @@ import LanguageSelector from "./LanguageSelector";
 import SearchModal from "./SearchModal";
 import { useQuery } from "@tanstack/react-query";
 import { useLanguage } from "@/hooks/useLanguage";
+import { Post } from "@/types";
 
 export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -13,24 +14,18 @@ export default function Header() {
   const [location] = useLocation();
   
   // Fetch posts data for search functionality
-  const { data: posts = [] } = useQuery({
+  const { data: posts = [] } = useQuery<Post[]>({
     queryKey: ['/api/posts'],
     staleTime: Infinity,
   });
   
-  const handleSearchFocus = () => {
+  const handleSearchClick = () => {
     setIsSearchModalOpen(true);
-  };
-  
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-    if (!isSearchModalOpen) {
-      setIsSearchModalOpen(true);
-    }
   };
   
   const closeSearchModal = () => {
     setIsSearchModalOpen(false);
+    setSearchQuery("");
   };
   
   return (
@@ -44,16 +39,15 @@ export default function Header() {
             </div>
           </Link>
           
-          {/* Search Input */}
+          {/* Search Input (Just for displaying/clicking) */}
           <div className="relative flex-grow max-w-md ml-4 md:ml-8">
             <div className="relative">
               <input
                 type="text"
                 placeholder={language === "en" ? "Search posts..." : "Buscar posts..."}
-                className="w-full py-2 pl-10 pr-4 text-sm rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={searchQuery}
-                onChange={handleSearchChange}
-                onFocus={handleSearchFocus}
+                className="w-full py-2 pl-10 pr-4 text-sm rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none cursor-pointer"
+                readOnly
+                onClick={handleSearchClick}
               />
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +74,7 @@ export default function Header() {
       <SearchModal 
         isOpen={isSearchModalOpen} 
         onClose={closeSearchModal} 
-        searchQuery={searchQuery}
+        initialSearchQuery={searchQuery}
         posts={posts}
       />
     </header>

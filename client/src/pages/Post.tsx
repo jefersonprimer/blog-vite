@@ -93,9 +93,15 @@ export default function PostPage() {
         {/* Post Content */}
         {!isLoading && post && content && (
           <>
-            {/* Post Header */}
-            <header className="mb-8">
-              <div className="flex justify-between items-center mb-2">
+            {/* Author info */}
+            <div className="flex items-center mb-6">
+              <img 
+                src="https://avatars.githubusercontent.com/u/28768629?v=4" 
+                alt="Jeferson Primer" 
+                className="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h3 className="font-bold">Jeferson Primer</h3>
                 <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                   <i className="ri-calendar-line mr-1"></i>
                   <span>{new Date(post.date).toLocaleDateString(language === 'pt-br' ? 'pt-BR' : 'en-US', { 
@@ -103,19 +109,25 @@ export default function PostPage() {
                     month: 'long', 
                     day: 'numeric' 
                   })}</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <select 
-                    id="postLanguage" 
-                    className="px-2 py-1 text-sm bg-gray-100 dark:bg-gray-800 rounded border border-gray-300 dark:border-gray-700"
-                    value={language}
-                    onChange={handleLanguageChange}
-                  >
-                    <option value="en">English</option>
-                    <option value="pt-br">Português</option>
-                  </select>
+                  <span className="mx-2">•</span>
+                  <span>{Math.ceil(content.content.length / 1000)} min read</span>
                 </div>
               </div>
+              <div className="ml-auto">
+                <select 
+                  id="postLanguage" 
+                  className="px-2 py-1 text-sm bg-gray-100 dark:bg-gray-800 rounded border border-gray-300 dark:border-gray-700"
+                  value={language}
+                  onChange={handleLanguageChange}
+                >
+                  <option value="en">English</option>
+                  <option value="pt-br">Português</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Post Header */}
+            <header className="mb-8">
               <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title[language]}</h1>
               <div className="flex flex-wrap gap-2 mb-6">
                 {post.tags.map(tag => (
@@ -123,18 +135,24 @@ export default function PostPage() {
                 ))}
               </div>
               
-              <img 
-                src={post.coverImage} 
-                alt={post.title[language]} 
-                className="w-full h-64 md:h-96 object-cover rounded-xl mb-6"
-              />
+              <div className="lg:flex lg:gap-6 items-start">
+                <div className="lg:order-2 lg:w-2/5 mb-6 lg:mb-0 lg:sticky lg:top-24">
+                  <img 
+                    src={post.coverImage} 
+                    alt={post.title[language]} 
+                    className="w-full rounded-xl object-cover"
+                  />
+                </div>
+                
+                <div className="lg:order-1 lg:w-3/5">
+                  {/* Post Content */}
+                  <article 
+                    className="blog-content font-serif prose prose-lg dark:prose-invert max-w-none"
+                    dangerouslySetInnerHTML={{ __html: parseMarkdown(content.content) }}
+                  />
+                </div>
+              </div>
             </header>
-            
-            {/* Post Content */}
-            <article 
-              className="blog-content font-serif prose prose-lg dark:prose-invert max-w-none"
-              dangerouslySetInnerHTML={{ __html: parseMarkdown(content.content) }}
-            />
           </>
         )}
       </div>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "clean-arch-frontend",
+    "title": {
+      "en": "Clean Architecture in the Frontend",
+      "pt-br": "Clean Architecture no Frontend"
+    },
+    "date": "2025-05-20",
+    "tags": ["architecture", "frontend", "clean-code"],
+    "coverImage": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    "description": {
+      "en": "How to apply Clean Architecture patterns in static frontend projects.",
+      "pt-br": "Como aplicar padrões da Clean Architecture em projetos frontend estáticos."
+    },
+    "folder": "clean-arch-frontend"
+  },
+  {
+    "id": "javascript-best-practices",
+    "title": {
+      "en": "Vanilla JavaScript Best Practices",
+      "pt-br": "Boas Práticas em JavaScript Vanilla"
+    },
+    "date": "2025-04-15",
+    "tags": ["javascript", "frontend", "clean-code"],
+    "coverImage": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    "description": {
+      "en": "Writing clean and maintainable JavaScript without frameworks.",
+      "pt-br": "Escrevendo JavaScript limpo e manutenível sem frameworks."
+    },
+    "folder": "javascript-best-practices"
+  },
+  {
+    "id": "markdown-documentation",
+    "title": {
+      "en": "Markdown for Technical Documentation",
+      "pt-br": "Markdown para Documentação Técnica"
+    },
+    "date": "2025-03-10",
+    "tags": ["documentation", "markdown", "technical-writing"],
+    "coverImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    "description": {
+      "en": "How to use Markdown to create effective documentation for your projects.",
+      "pt-br": "Como usar Markdown para criar documentação eficaz para seus projetos."
+    },
+    "folder": "markdown-documentation"
+  },
+  {
+    "id": "mobile-first-design",
+    "title": {
+      "en": "Mobile-First Responsive Design",
+      "pt-br": "Design Responsivo Mobile-First"
+    },
+    "date": "2025-02-28",
+    "tags": ["css", "responsive", "design"],
+    "coverImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    "description": {
+      "en": "Principles and techniques for building mobile-first responsive websites.",
+      "pt-br": "Princípios e técnicas para construir sites responsivos com abordagem mobile-first."
+    },
+    "folder": "mobile-first-design"
+  }
+]

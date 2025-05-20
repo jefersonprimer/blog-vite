@@ -1,0 +1,188 @@
+# 📝 PrimerDev's Static Blog
+
+This is a minimalist, responsive, markdown-powered blog built using only **HTML**, **CSS**, and **JavaScript**.  
+It is designed to be hosted on **GitHub Pages** and follows clean code practices inspired by **Clean Architecture**, **SOLID**, and **DDD** principles — adapted for a static site.
+
+---
+
+## 🌍 Multilingual Blog
+
+Each blog post supports two versions:
+
+- `pt-br`: Portuguese (Brazil)
+- `en`: English
+
+Posts are stored in Markdown format inside the `posts/` folder with the following structure:
+
+posts/
+├── post-id/
+│ ├── en.md
+│ └── pt-br.md
+
+yaml
+Copiar
+Editar
+
+The language selector on the UI lets users toggle between languages dynamically.
+
+---
+
+## 🌗 Dark / Light Theme
+
+A theme toggle button allows switching between light and dark modes using `localStorage`.  
+The CSS is written with both themes supported and toggled via a class on `<body>`.
+
+---
+
+## 📁 Project Structure
+
+blog/
+├── index.html # Home page
+├── 404.html # Custom 404 page
+├── styles/
+│ └── main.css # Responsive, theme-aware CSS
+├── scripts/
+│ ├── main.js # Handles routing, filters, theme toggle
+│ ├── markdownParser.js # Markdown to HTML parser
+│ └── postPage.js # Dynamic rendering of blog posts
+├── data/
+│ └── posts.json # Metadata for each post
+├── posts/
+│ └── post-id/
+│ ├── en.md
+│ └── pt-br.md
+└── images/
+└── cover.png
+
+yaml
+Copiar
+Editar
+
+---
+
+## 🧠 Architecture & Principles
+
+- **Clean Architecture** (adapted to static content)
+- **SOLID** (each JS module has a single responsibility)
+- **DDD mindset**: Markdown = entity, JSON = repository
+- **No build step**: Everything works in vanilla JS and markdown
+- **Mobile-first**, accessible layout
+
+---
+
+## 🗂️ posts.json Example
+
+```json
+[
+  {
+    "id": "clean-arch-frontend",
+    "title": {
+      "en": "Clean Architecture in the Frontend",
+      "pt-br": "Clean Architecture no Frontend"
+    },
+    "date": "2025-05-20",
+    "tags": ["architecture", "frontend", "clean-code"],
+    "coverImage": "/images/clean-arch.png",
+    "description": {
+      "en": "How to apply Clean Architecture patterns in static frontend projects.",
+      "pt-br": "Como aplicar padrões da Clean Architecture em projetos frontend estáticos."
+    },
+    "folder": "clean-arch-frontend"
+  }
+]
+📝 Post Example
+File: posts/clean-arch-frontend/en.md
+
+md
+Copiar
+Editar
+# Clean Architecture in the Frontend
+
+Clean Architecture helps developers separate concerns and structure scalable applications.  
+This post explains how to apply it even in static environments like GitHub Pages.
+
+## Principles
+
+- Entities (Markdown)
+- Use cases (Routing, Theme Switcher)
+- Interface (HTML + CSS + JS)
+
+## Folder Structure
+
+Keep each post in a separate folder and load metadata from JSON.
+File: posts/clean-arch-frontend/pt-br.md
+
+md
+Copiar
+Editar
+# Clean Architecture no Frontend
+
+A Clean Architecture ajuda desenvolvedores a separar responsabilidades e criar aplicações escaláveis.  
+Este post mostra como aplicar esses conceitos mesmo em projetos estáticos como o GitHub Pages.
+
+## Princípios
+
+- Entidades (Markdown)
+- Casos de uso (Roteamento, Troca de tema)
+- Interface (HTML + CSS + JS)
+
+## Estrutura
+
+Mantenha cada post em sua própria pasta e carregue os metadados do JSON.
+🔍 Features
+✅ Responsive design (mobile-first)
+
+✅ Dark/Light theme toggle
+
+✅ Language switcher (pt-br / en)
+
+✅ Markdown posts
+
+✅ JSON metadata
+
+✅ Filters by title and tag
+
+✅ Custom 404 page
+
+✅ Clean separation between data and UI
+
+🚀 Deployment (GitHub Pages)
+Push the repo to GitHub
+
+Go to Settings > Pages
+
+Choose root branch and folder / (root)
+
+Access at: https://your-username.github.io/blog/
+
+🎯 Future Improvements
+Pagination
+
+Local search (fuse.js)
+
+RSS feed
+
+Comment system (Utterances / GitHub Issues)
+
+Dark mode auto-detection
+
+Language auto-detection
+
+👨‍💻 Author
+Built with ❤️ by @jefersonprimer
+
+yaml
+Copiar
+Editar
+
+---
+
+Se quiser, posso adicionar esse `README.md` automaticamente ao `.zip` do seu projeto e reempacotar. Deseja isso?
+
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@ export default function Home() {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   
   // Fetch posts data
-  const { data: posts, isLoading, error } = useQuery({
+  const { data: posts, isLoading, error } = useQuery<Post[]>({
     queryKey: ['/api/posts'],
     staleTime: Infinity, // Keep this data fresh forever (or until page reload)
   });
@@ -35,11 +35,11 @@ export default function Home() {
       {/* Hero Section */}
       <section className="mb-12">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">PrimerDev's Static Blog</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog Fernanda Kipper | Dev</h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
             {language === "en" 
-              ? "A minimalist, responsive, markdown-powered blog built with clean code principles."
-              : "Um blog minimalista, responsivo, baseado em markdown e construído com princípios de código limpo."}
+              ? "Learn about web development, cloud computing, programming, technology and careers. Here we talk about Java, Angular, AWS and much more. Practical content for those who want to update themselves, grow in their career and master the most used tools in the market."
+              : "Aprenda sobre desenvolvimento web, cloud computing, programação, tecnologia e carreira. Aqui falamos de Java, Angular, AWS e muito mais. Conteúdo prático para quem quer se atualizar, crescer na carreira e dominar as ferramentas mais usadas no mercado."}
           </p>
           <div className="inline-flex flex-wrap justify-center gap-2">
             <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Clean Architecture</span>

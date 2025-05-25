@@ -7,7 +7,7 @@ import NotFound from "@/pages/not-found";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import Post from "@/pages/Post";
-import HowToCreate from "@/pages/HowToCreate";
+import Category from "@/pages/Category";
 import { LanguageProvider } from "@/components/LanguageProvider";
 
 function Router() {
@@ -15,7 +15,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/posts/:postId" component={Post} />
-      <Route path="/how-to-create" component={HowToCreate} />
+      <Route path="/blog/category/:category" component={Category} />
       <Route component={NotFound} />
     </Switch>
   );

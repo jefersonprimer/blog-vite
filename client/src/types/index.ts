@@ -10,6 +10,7 @@ export interface Post {
   title: LocalizedText;
   date: string;
   tags: string[];
+  category: string;
   coverImage: string;
   description: LocalizedText;
   folder: string;

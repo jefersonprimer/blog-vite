@@ -1,46 +1,72 @@
 import { useState, useEffect } from "react";
+import { useRoute, Link } from "wouter";
 import { Post } from "@/types";
 import PostCard from "@/components/PostCard";
 import { useLanguage } from "@/hooks/useLanguage";
 import { useQuery } from "@tanstack/react-query";
 
-export default function Home() {
+export default function Category() {
   const { language } = useLanguage();
+  const [_, params] = useRoute("/blog/category/:category");
+  const category = params?.category;
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   const [visiblePosts, setVisiblePosts] = useState<number>(6);
   
   // Fetch posts data
   const { data: posts, isLoading, error } = useQuery<Post[]>({
     queryKey: ['/api/posts'],
-    staleTime: Infinity, // Keep this data fresh forever (or until page reload)
+    staleTime: Infinity,
   });
   
   // Update filtered posts when posts data changes
   useEffect(() => {
-    if (posts) {
-      setFilteredPosts(posts);
+    if (posts && category) {
+      const filtered = posts.filter(post => 
+        post.tags.some(tag => tag.toLowerCase() === category.toLowerCase())
+      );
+      setFilteredPosts(filtered);
     }
-  }, [posts]);
+  }, [posts, category]);
 
   const handleLoadMore = () => {
     setVisiblePosts(prev => prev + 6);
   };
+
+  // If no category is provided, show a message
+  if (!category) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            {language === "en" ? "Category Not Found" : "Categoria Não Encontrada"}
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+            {language === "en" 
+              ? "Please select a valid category."
+              : "Por favor, selecione uma categoria válida."}
+          </p>
+          <Link href="/">
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-black text-white dark:text-black dark:bg-white rounded-lg hover:bg-primary-700 transition-colors cursor-pointer">
+              {language === "en" ? "Back to Home" : "Voltar para Início"}
+            </div>
+          </Link>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Hero Section */}
+      {/* Category Header */}
       <section className="mb-12">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog Jeferson Primer | Dev</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 capitalize">
+            {category}
+          </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
             {language === "en" 
-              ? "Learn about web development, cloud computing, programming, technology and careers. Here we talk about Java, Angular, AWS and much more."
-              : "Aprenda sobre desenvolvimento web, cloud computing, programação, tecnologia e carreira. Aqui falamos de Java, Angular, AWS e muito mais."}
-          </p>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-            {language === "en"
-              ? "Practical content for those who want to update themselves, grow in their career and master the most used tools in the market."
-              : "Conteúdo prático para quem quer se atualizar, crescer na carreira e dominar as ferramentas mais usadas no mercado."}
+              ? `Posts about ${category}`
+              : `Posts sobre ${category}`}
           </p>
         </div>
       </section>
@@ -74,8 +100,8 @@ export default function Home() {
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
             {language === "en" 
-              ? "Try adjusting your search or filter criteria."
-              : "Tente ajustar sua busca ou critérios de filtro."}
+              ? "No posts found in this category."
+              : "Nenhum post encontrado nesta categoria."}
           </p>
         </div>
       )}
@@ -104,4 +130,4 @@ export default function Home() {
       )}
     </div>
   );
-}
+} 

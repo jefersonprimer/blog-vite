@@ -96,7 +96,7 @@ export default function PostPage() {
             {/* Author info */}
             <div className="flex items-center mb-6">
               <img 
-                src="https://avatars.githubusercontent.com/u/28768629?v=4" 
+                src="https://avatars.githubusercontent.com/u/158480212?v=4" 
                 alt="Jeferson Primer" 
                 className="w-12 h-12 rounded-full mr-4"
               />
@@ -131,7 +131,15 @@ export default function PostPage() {
               <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title[language]}</h1>
               <div className="flex flex-wrap gap-2 mb-6">
                 {post.tags.map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">{tag}</span>
+                  <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">
+                    <Link 
+                      key={tag} 
+                      href={`/blog/category/${tag.toLowerCase()}`}
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs transition-colors"
+                    >
+                      {tag}
+                    </Link>
+                  </span>
                 ))}
               </div>
               

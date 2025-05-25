@@ -127,9 +127,9 @@ export default function SearchModal({ isOpen, onClose, initialSearchQuery, posts
         {/* Search results */}
         <div className="overflow-y-auto max-h-[calc(80vh-144px)]">
           {filteredPosts.length === 0 ? (
-            <div className="p-6 text-center text-gray-500 dark:text-gray-400">
+            <div className="p-6 text-left text-gray-500 dark:text-gray-400">
               {searchQuery.trim() === "" 
-                ? (language === "en" ? "Type to search..." : "Digite para pesquisar...")
+                ? (language === "en" ? "Type to search..." : "Digite pelo menos 3 caracteres para começar a busca.")
                 : (language === "en" ? "No posts found" : "Nenhum post encontrado")}
             </div>
           ) : (

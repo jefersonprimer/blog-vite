@@ -144,15 +144,15 @@ export default function PostPage() {
               </div>
               
               <div className="lg:flex lg:gap-6 items-start">
-                <div className="lg:order-2 lg:w-2/5 mb-6 lg:mb-0 lg:sticky lg:top-24">
+                {/* <div className="lg:order-2 lg:w-2/5 mb-6 lg:mb-0 lg:sticky lg:top-24">
                   <img 
                     src={post.coverImage} 
                     alt={post.title[language]} 
                     className="w-full rounded-xl object-cover"
                   />
-                </div>
+                </div> */}
                 
-                <div className="lg:order-1 lg:w-3/5">
+                <div className="lg:order-1 lg:w-5/5">
                   {/* Post Content */}
                   <article 
                     className="blog-content font-serif prose prose-lg dark:prose-invert max-w-none"

@@ -1,5 +1,20 @@
 [
   {
+    "id": "testes-unitarios-com-poku",
+    "title": {
+      "en": "unit-testing-with-poku",
+      "pt-br": "testes-unitarios-com-poku"
+    },
+    "date": "2025-05-28",
+    "tags": ["backend", "frontend", "unit test"],
+    "coverImage": "https://kipperdev.online/wp-content/uploads/2025/05/poku-cover.webp",
+    "description": {
+      "en": "Have you ever had the experience of setting up unit tests in a simple TypeScript project and, before you knew it, you were opening 5 configuration files?",
+      "pt-br": "Você já passou pela experiência de configurar testes unitários em um projeto simples de TypeScript e, quando viu, estava abrindo 5 arquivos de configu..."
+    },
+    "folder": "testes-unitarios-com-poku"
+  },
+  {
     "id": "clean-arch-frontend",
     "title": {
       "en": "Clean Architecture in the Frontend",
